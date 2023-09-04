@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>add-fruta</ion-title>
+  </ion-toolbar>
+
+  <ion-button (click)="goHome();">HOME</ion-button>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-input placeHolder="Nombre de Fruta" type="text" #name></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeHolder="URL Imagen" type="text" #imageURL></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="saveNewFruta(name,imageURL);">Guardar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
