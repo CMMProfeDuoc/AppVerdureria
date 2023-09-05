@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button horizontal = "end" size="small" (click)="goHome();" color="secondary">
+     HOME 
+    </ion-button>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <ion-list *ngFor = "let item of carrito">
+    <ion-item>
+      <ion-label>{{item.name}}</ion-label>
+      <ion-label>${{item.price}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<!--barra precio-->
+<ion-content>
+  <ion-label>TOTAL: </ion-label>
+  <ion-label> $getTotalPrice</ion-label>
+</ion-content>

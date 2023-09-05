@@ -3,4 +3,5 @@ export interface Fruta {
     name:string,
     color:string,
     imageURL:string,
+    price:number,
 }

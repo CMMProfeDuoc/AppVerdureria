@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FrutasService } from '../frutas.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Fruta } from  '../frutas.model';
 
 @Component({
@@ -11,14 +11,18 @@ import { Fruta } from  '../frutas.model';
 export class FrutasDetailPage implements OnInit {
   fruta!: Fruta;  
 
-  constructor(private frutasService:FrutasService, private activatedRoute: ActivatedRoute) { }
+  constructor(private frutasService:FrutasService, private activatedRoute: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      const fId = paramMap.get("frutasId");
+      const fId = paramMap.get("frutaId");
       this.fruta = this.frutasService.getFruta(fId as string) as Fruta;
       console.log(this.fruta);
     })
+  }
+
+  goFrutas (){
+    this.router.navigate(['/frutas']);
   }
 
 }

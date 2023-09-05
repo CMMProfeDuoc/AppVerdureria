@@ -1,27 +1,26 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>frutas</ion-title>
+  <ion-toolbar color="primary">
+    <ion-button horizontal = "end" size="small" (click)="goHome();" color="secondary">
+     HOME 
+    </ion-button>
+    <ion-title>Frutas</ion-title>
   </ion-toolbar>
-
-  <ion-fab vertical="top" horizontal = "end">
-    <ion-fab-button (click)="addNewFruta();">
-      AddFruta
-    </ion-fab-button>
-  </ion-fab>
 </ion-header>
 
-<ion-content [fullscreen]="true" [routerLink] = "['/home']">
-  <ion-button>HOME</ion-button>
-</ion-content>
-
 <ion-content>
+  <ion-fab vertical="bottom" horizontal = "end">
+    <ion-fab-button (click)="addNewFruta();">
+      <ion-icon name = "add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-list>
-    <ion-item *ngFor = "let f of frutas" [routerLink] = "['/frutas',f.id]">
+    <ion-item *ngFor = "let f of frutas">
       <ion-avatar slot="start">
-        <ion-img [src]="f.imageURL"></ion-img>
+        <ion-img [src]="f.imageURL" [routerLink] = "['/frutas',f.id]"></ion-img>
       </ion-avatar>
       <ion-label>{{f.name}}</ion-label>
-      <ion-button>Agregar a carrito</ion-button>
+      <ion-button (click)="addToCarrito(f.name,f.price);">Agregar a carrito</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -15,12 +15,16 @@ export class AddFrutaPage implements OnInit {
   ngOnInit() {
   }
 
-  saveNewFruta (name:any,imageURL:any){
-    this.frutasService.newFruta(name,imageURL);
+  saveNewFruta (name:any,imageURL:any,price:any){
+    this.frutasService.newFruta(name,imageURL,price);
   }
 
   goHome (){
     this.router.navigate(['/home']);
+  }
+
+  goFrutas (){
+    this.router.navigate(['/frutas']);
   }
 
 }

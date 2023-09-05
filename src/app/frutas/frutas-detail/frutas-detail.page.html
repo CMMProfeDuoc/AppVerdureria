@@ -1,11 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-button horizontal = "end" size="small" (click)="goFrutas();" color="primary">
+      Back
+     </ion-button>
     <ion-title>{{fruta.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-label>
-    {{fruta.id}}
-  </ion-label>
+<ion-content color="primary">
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-label>{{fruta.name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>${{fruta.price}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{fruta.color}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-img 
+  [src]="fruta.imageURL"
+  [alt]="fruta.name"
+  ></ion-img>
+
 </ion-content>

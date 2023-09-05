@@ -22,4 +22,12 @@ export class FrutasPage implements OnInit {
     this.router.navigate(['/new-fruta']);
   }
 
+  goHome (){
+    this.router.navigate(['/home']);
+  }
+
+  addToCarrito (name:any,price:any){
+    this.frutasService.addToCarrito(name,price);
+  }
+
 }

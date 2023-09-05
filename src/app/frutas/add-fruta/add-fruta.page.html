@@ -1,9 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>add-fruta</ion-title>
+    <ion-button horizontal = "end" size="" (click)="goFrutas();">
+     Volver 
+    </ion-button>
+    <ion-title>Frutas</ion-title>
   </ion-toolbar>
-
-  <ion-button (click)="goHome();">HOME</ion-button>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -17,7 +18,11 @@
     </ion-item>
 
     <ion-item>
-      <ion-button (click)="saveNewFruta(name,imageURL);">Guardar</ion-button>
+      <ion-input placeHolder="$$$" type="number" #price></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="saveNewFruta(name,imageURL,price);">Guardar</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
