@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { VerdurasService } from '../verduras.service';
+import { Router } from '@angular/router';
+import { Verdura } from '../verduras.model'
 
 @Component({
   selector: 'app-verduras-detail',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VerdurasDetailPage implements OnInit {
 
-  constructor() { }
+  verduras!:Verdura[];
+
+  constructor(
+    private verdurasService:VerdurasService,
+    private router:Router
+
+  ) { }
 
   ngOnInit() {
   }

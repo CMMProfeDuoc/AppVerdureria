@@ -25,4 +25,12 @@
   [alt]="fruta.name"
   ></ion-img>
 
+  <ion-input
+  placeHolder = "New Name"
+  type= "text"
+  #newName
+  ></ion-input>
+
+  <ion-button (click) = changeName(fruta.id,newName);> CAMBIAR NOMBRE</ion-button>
+
 </ion-content>

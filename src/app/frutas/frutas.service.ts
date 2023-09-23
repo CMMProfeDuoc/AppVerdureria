@@ -45,7 +45,15 @@ export class FrutasService {
     };
   }
 
-  newFruta (name:any, imageURL:any,price:any){
+  getFrutabyColor (frutaColor:string) {
+    return [
+      ...this.frutas.filter(fruta => {
+        return fruta.color === frutaColor;
+      })
+    ];
+  }
+
+  newFruta (name:string, imageURL:string,price:any){
     this.frutas.push({
       name,
       imageURL,
@@ -53,10 +61,16 @@ export class FrutasService {
       id:this.frutas.length+1+"",
       price
     });
+    console.log(name," agregado a carrito");
   }
 
   addToCarrito (name:any,price:any){
     this.carritoService.addToCarrito(price,name);
+  }
+
+  modifyName (frutaId: any, newName: any){
+    this.frutas[frutaId].name = newName;
+    console.log("Nombre Cambiado",this.frutas[frutaId].name);
   }
 
 }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "appverdureriatest": {
+      "hosting": {
+        "app": [
+          "appverdureriatest"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "appverdureriatest"
+  }
+}

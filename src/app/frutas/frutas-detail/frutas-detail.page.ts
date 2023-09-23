@@ -25,4 +25,8 @@ export class FrutasDetailPage implements OnInit {
     this.router.navigate(['/frutas']);
   }
 
+  changeName (frutaId:any, newName: any){
+    this.frutasService.modifyName(frutaId,newName);
+  }
+
 }

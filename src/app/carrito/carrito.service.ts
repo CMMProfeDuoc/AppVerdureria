@@ -38,4 +38,8 @@ export class CarritoService {
     this.carrito.forEach((element) => tot+element.price);
     return tot;
   }
+
+  escribirMensaje (name:string){
+    console.log("Hola",name);
+  }
 }

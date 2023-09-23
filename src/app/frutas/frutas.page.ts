@@ -19,7 +19,7 @@ export class FrutasPage implements OnInit {
   }
 
   addNewFruta (){
-    this.router.navigate(['/new-fruta']);
+    this.router.navigate(['/frutas/new-fruta']);
   }
 
   goHome (){
