@@ -41,6 +41,7 @@ export class LoginPage implements OnInit {
 
   //3 Crear funciones
   async register () {
+    console.log(this.credentials.value);
     const loading = await this.loadingController.create();
     await loading.present();
 
@@ -51,10 +52,24 @@ export class LoginPage implements OnInit {
       this.router.navigateByUrl('/home',{replaceUrl: true});
     }else{
       //show alert
+      this.showAlert('Error al registrar','Vuelva a intentarlo');
     }
   }
 
-  async login () {}
+  async login () {
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const user = await this.authService.login(this.credentials.value);
+    await loading.dismiss();
+
+    if (user){ //en caso de tener exito, ir a home y reemplazar el historial
+      this.router.navigateByUrl('/home',{replaceUrl: true});
+    }else{
+      //show alert
+      this.showAlert('Error al entrar','Vuelva a intentarlo');
+    }
+  }
 
   //Crear esto al ultimo, cuando sea necesario usar (?)
   async showAlert (header:any, message:any) {
